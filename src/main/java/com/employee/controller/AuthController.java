@@ -33,6 +33,12 @@ public class AuthController {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(StandardResponse.success("User registered successfully", response));
 	}
+	
+	
+	
+	
+	
+	
 
 	@PostMapping("/login")
 	public ResponseEntity<StandardResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest request) {

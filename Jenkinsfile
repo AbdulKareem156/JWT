@@ -1,6 +1,10 @@
 pipeline {
     agent any
-    
+
+    tools {
+        maven 'maven'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -8,13 +12,13 @@ pipeline {
                     url: 'https://github.com/AbdulKareem156/JWT.git'
             }
         }
-        
+
         stage('Build') {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
         }
-        
+
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {

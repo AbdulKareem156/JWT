@@ -34,9 +34,7 @@ public class AuthController {
                 .body(StandardResponse.success("User registered successfully", response));
     }
     
-    
-    
-    
+  
     
     @PostMapping("/login")
     public ResponseEntity<StandardResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest request) {
